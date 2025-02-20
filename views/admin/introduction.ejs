@@ -1,0 +1,84 @@
+<%- include("navbar.ejs")%>
+
+<form action ="/admin/save_introduction" method="post" enctype="multipart/form-data">
+
+<div class="container bg-dark text-white p-5">
+<h1>Introduction Page</h1>
+<div class="row">
+
+    <div class="col-md-4 mb-3">
+    Enter Name
+   <input type="text" name="user_name" class="form-control" value="<%-intro.user_name%>">
+    </div>
+
+    <div class="col-md-4 mb-3">
+    Enter Tagline
+    <input type="text" name="tag_line" class="form-control"value="<%-intro.tag_line%>">
+    </div>
+
+    <div class="col-md-2 mb-3">
+    Select Photo
+    <input type="file" name="user_photo" class="form-control">
+    </div>
+    <div class="col-md-2 mb-3">
+    <img src="/<%-intro.user_photo%>"width="100px">
+    </div>
+
+
+    <div class="col-md-4 mb-3">
+     Enter Mobile
+     <input type="number" name="user_mobile" class="form-control" value="<%-intro.user_mobile%>">
+    </div>
+
+    <div class="col-md-4 mb-3">
+    Enter Email
+    <input type="email" name="user_email" class="form-control" value="<%-intro.user_email%>">
+    </div>
+
+    <div class="col-md-2 mb-3">
+        Resume PDF
+        <input type="file" name="resume" class="form-control" accept=".pdf">
+        </div>
+        <div class="col-md-2 mb-3">
+            <br>
+            <a href="/<%-intro.resume%>">
+            <button type="button" class="btn btn-primary btn-sm">Open Resume</button>
+        </a>
+        </div>
+        
+
+    <div class="col-md-3 mb-3">
+    Enter Linkedin link
+    <input type="url" name="linkedin_link" class="form-control" value="<%-intro.linkedin_link%>">            
+    </div>
+
+    <div class="col-md-3 mb-3">
+     Enter Instagram link
+     <input type="url" name="instagram_link" class="form-control" value="<%-intro.instagram_link%>">
+    </div>
+
+    <div class="col-md-3 mb-3">
+    Enter Facebook link
+    <input type="url" name="facebook_link" class="form-control"value="<%-intro.facebook_link%>">
+    </div>
+
+    <div class="col-md-3 mb-3">
+    Enter Twitter link
+    <input type="url" name="twitter_link" class="form-control"value="<%-intro.twitter_link%>">
+    </div>
+  
+    <div class="col-md-12 mb-3">
+    About in Brief
+    <textarea name="about_details" class="form-control" rows="7"><%-intro.about_details%>
+    </textarea>
+    </div>
+    <div class="col-md-12 mb-3 text-center" >
+     <button class="btn btn-primary">Save Introduction</button>
+     </div>
+    
+</div>
+</div>
+</form>
+
+<%- include("footer.ejs")%>
+

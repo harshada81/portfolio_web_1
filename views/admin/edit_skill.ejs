@@ -1,0 +1,28 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/edit_skill/<%- skill.skill_id %>" method="post" enctype="multipart/form-data">
+    <div class="container bg-dark text-white p-4">
+        <h1>Edit Skill</h1>
+        <div class="row">
+            <div class="col-md-5">
+                Existing Skill Image:
+                <br>
+                <img src="/<%- skill.skill_image %>" width="100px">
+                <input type="hidden" name="existing_skill_image" value="<%- skill.skill_image %>">
+                <br><br>
+                New Skill Image (optional):
+                <input type="file" name="skill_image" class="form-control">
+            </div>
+            <div class="col-md-5">
+                Skill Title:
+                <input type="text" name="skill_title" value="<%- skill.skill_title %>" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <br>
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include("footer.ejs") %>

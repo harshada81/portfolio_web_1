@@ -1,0 +1,86 @@
+<%- include("navbar.ejs")%>
+
+<form action="/admin/save_education" method="post">
+<div class="container bg-dark text-white p-4">
+ <h1>Education Details</h1>
+ <div class="row">
+    <div class="col-md-3">
+     Qualifiaction
+     <input type="text" name="qualification" class="form-control">
+    </div>
+    <br>
+    <div class="col-md-3">
+       University
+        <input type="text" name="university" class="form-control">
+       </div>
+       <div class="col-md-3">
+       Passing Year
+        <input type="number" name="passing_year" class="form-control">
+       </div>
+       <div class="col-md-2">
+       Percentage
+        <input type="number" name="percentage" class="form-control">
+       </div>
+       
+       <div class ="col-md-1">
+        <br>
+        <button class="btn btn-primary">save</button>
+
+ </div>
+ </div>
+</div>
+</form>
+
+
+
+<div class="container bg-dark text-white p-4"> 
+    <h1>Education Details</h1>
+    <div class="row">
+
+       <div class="col-md-12">
+        <table class="table table-bordered table-sm table-dark">
+       <!-- Example for Education -->
+
+   <thead>
+     <tr>
+       <th>Id</th>
+       <th>Qualification</th>
+       <th>University</th>
+       <th>Passing Year</th>
+       <th>Percentage</th>
+       <th>Actions</th>
+     </tr>
+   </thead>
+   <tbody>
+     <% list.forEach(function(edu, index) { %>
+       <tr>
+         <td><%= index + 1 %></td>
+         <td><%= edu.qualification_name %></td>
+         <td><%= edu.university %></td>
+         <td><%= edu.passing_year %></td>
+         <td><%= edu.percentage %></td>
+         <td>
+           <a href="/admin/edit_education/<%= edu.qualification_id %>" class="btn btn-warning btn-sm">Edit</a>
+           <a href="/admin/delete_education/<%= edu.qualification_id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+         </td>
+       </tr>
+     <% }); %>
+   </tbody>
+ </table>
+ 
+ <!-- Add New Entry Button -->
+ <a href="/admin/add_education" class="btn btn-success btn-sm">Add New</a>
+ 
+        </div>
+        </div>
+        </div>
+       
+
+
+<%- include("footer.ejs")%>
+
+
+<!-- qualifiaction
+university
+passing year
+percentage -->

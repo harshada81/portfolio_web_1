@@ -1,0 +1,32 @@
+<%- include("navbar.ejs") %>
+
+<div class="container bg-light p-5">
+  <h1>Edit Education</h1>
+  <form action="/admin/edit_education/<%= qualification.qualification_id %>" method="post">
+
+    <div class="form-group mb-3">
+      <label for="qualification">Qualification</label>
+      <input type="text" id="qualification" name="qualification" class="form-control" value="<%= qualification.qualification_name %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="university">University</label>
+      <input type="text" id="university" name="university" class="form-control" value="<%= qualification.university %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="passing_year">Passing Year</label>
+      <input type="number" id="passing_year" name="passing_year" class="form-control" value="<%= qualification.passing_year %>" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="percentage">Percentage</label>
+      <input type="text" id="percentage" name="percentage" class="form-control" value="<%= qualification.percentage %>" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="/admin/education" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+
+<%- include("footer.ejs") %>
